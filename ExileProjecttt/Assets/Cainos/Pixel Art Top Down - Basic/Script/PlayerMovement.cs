@@ -2,68 +2,52 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Movement speed
-    public float dashSpeed = 15f; // Dash speed
-    public float dashDuration = 0.2f; // Dash duration in seconds
-    public float dashCooldown = 1f; // Dash cooldown in seconds
+    float horizontalInput;
+    float moveSpeed = 5f;
+    bool isFacingRight = false;
+    float jumpPower = 5f;
+    bool isJumping = false;
 
-    private Vector3 moveDirection; // Player's movement direction
-    private bool isDashing; // Flag to track if the player is dashing
-    private float dashTimer; // Timer for dash duration
-    private float dashCooldownTimer; // Timer for dash cooldown
+    Rigidbody2D rb;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        // Get input from horizontal and vertical axes
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
 
-        // Calculate the movement direction
-        moveDirection = new Vector3(horizontal, 0f, vertical);
+        FlipSprite();
 
-        // Dash input
-        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0f)
+        if (Input.GetButtonDown("Jump") && !isJumping)
         {
-            StartDash();
-        }
-
-        // Update dash timers
-        if (isDashing)
-        {
-            dashTimer -= Time.deltaTime;
-            if (dashTimer <= 0f)
-            {
-                StopDash();
-            }
-        }
-        else
-        {
-            dashCooldownTimer -= Time.deltaTime;
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            isJumping = true;
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        // Move the player
-        if (isDashing)
+        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+    }
+
+    void FlipSprite()
+    {
+        if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
-            transform.Translate(moveDirection * dashSpeed * Time.deltaTime, Space.Self);
-        }
-        else
-        {
-            transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.Self);
+            isFacingRight = !isFacingRight;
+            Vector3 ls = transform.localScale;
+            ls.x *= -1f;
+            transform.localScale = ls;
         }
     }
 
-    void StartDash()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        isDashing = true;
-        dashTimer = dashDuration;
-        dashCooldownTimer = dashCooldown;
-    }
-
-    void StopDash()
-    {
-        isDashing = false;
+        isJumping = false;
     }
 }
