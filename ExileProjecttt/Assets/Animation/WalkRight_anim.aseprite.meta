@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 8
       height: 15
-    spriteID: 781297a03e7ded34d841cff1e4f58028
+    spriteID: ecd87cba3bc52ff48b8537bdff576a2b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 27
       width: 8
       height: 15
-    spriteID: 02b80aaf044f1934cbd956a110ade2e0
+    spriteID: e9d6eeb4a878b0544ba26bb828801653
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 4
       width: 8
       height: 15
-    spriteID: 94211f16e1693d94f8b2adbc37df4677
+    spriteID: a803311c8dea98d47bd7861f2c8cacd2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -197,7 +197,7 @@ ScriptedImporter:
         y: 0
         width: 8
         height: 15
-      spriteId: 781297a03e7ded34d841cff1e4f58028
+      spriteId: ecd87cba3bc52ff48b8537bdff576a2b
     - name: WalkRight_anim_Frame_1
       frameIndex: 1
       cellRect:
@@ -205,7 +205,7 @@ ScriptedImporter:
         y: 0
         width: 8
         height: 15
-      spriteId: 02b80aaf044f1934cbd956a110ade2e0
+      spriteId: e9d6eeb4a878b0544ba26bb828801653
     - name: WalkRight_anim_Frame_2
       frameIndex: 2
       cellRect:
@@ -213,7 +213,7 @@ ScriptedImporter:
         y: 0
         width: 8
         height: 15
-      spriteId: 94211f16e1693d94f8b2adbc37df4677
+      spriteId: a803311c8dea98d47bd7861f2c8cacd2
     linkedCells: []
     parentIndex: -1
   platformSettings: []
