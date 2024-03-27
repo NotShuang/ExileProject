@@ -3,10 +3,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     float horizontalInput;
+    float verticalInput;
     float moveSpeed = 5f;
-    bool isFacingRight = false;
-    float jumpPower = 5f;
-    bool isJumping = false;
+    bool isFacingRight = true;
 
     Rigidbody2D rb;
 
@@ -20,34 +19,38 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-
+        verticalInput = Input.GetAxis("Vertical");
         FlipSprite();
-
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            isJumping = true;
-        }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        // Create a new vector for movement based on horizontal and vertical inputs
+        Vector2 movement = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+        rb.velocity = movement;
     }
 
     void FlipSprite()
     {
-        if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
+        // Check if the player is moving horizontally
+        if (horizontalInput != 0)
         {
-            isFacingRight = !isFacingRight;
-            Vector3 ls = transform.localScale;
-            ls.x *= -1f;
-            transform.localScale = ls;
+            isFacingRight = horizontalInput > 0;
         }
-    }
+        // Check if the player is moving vertically
+        else if (verticalInput != 0)
+        {
+            isFacingRight = verticalInput > 0;
+        }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isJumping = false;
+        // Flip the sprite based on the direction
+        if (isFacingRight)
+        {
+            transform.localScale = new Vector3(2, 2, 1); // Adjust the scale values as needed
+        }
+        else
+        {
+            transform.localScale = new Vector3(-2, 2, 1); // Adjust the scale values as needed
+        }
     }
 }
