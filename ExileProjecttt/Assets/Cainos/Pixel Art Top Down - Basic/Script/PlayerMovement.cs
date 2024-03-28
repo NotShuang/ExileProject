@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.localScale = new Vector3(2, 2, 2);
+        Debug.Log("Start method called. Scale: " + transform.localScale);
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         FlipSprite();
+
     }
 
     private void FixedUpdate()
@@ -44,13 +47,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Flip the sprite based on the direction
-        if (isFacingRight)
-        {
-            transform.localScale = new Vector3(2, 2, 1); // Adjust the scale values as needed
-        }
-        else
-        {
-            transform.localScale = new Vector3(-2, 2, 1); 
-        }
+        transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
+    }
+
+    public void SetScaleOnPlay()
+    {
+        transform.localScale = new Vector3(2, 2, 2);
     }
 }
