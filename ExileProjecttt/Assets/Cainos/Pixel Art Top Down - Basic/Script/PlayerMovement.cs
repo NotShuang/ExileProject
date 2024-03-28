@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            transform.localScale = new Vector3(-2, 2, 1); // Adjust the scale values as needed
+            transform.localScale = new Vector3(-2, 2, 1); 
         }
     }
 }
