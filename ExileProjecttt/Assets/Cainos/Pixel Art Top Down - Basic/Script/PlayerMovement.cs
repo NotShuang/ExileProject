@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.localScale = new Vector3(2, 2, 2);
-        Debug.Log("Start method called. Scale: " + transform.localScale);
     }
 
     // Update is called once per frame
