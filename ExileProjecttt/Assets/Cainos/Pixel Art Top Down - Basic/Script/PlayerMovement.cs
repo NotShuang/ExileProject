@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SetScaleOnPlay();
     }
 
     // Update is called once per frame
@@ -49,8 +48,4 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
     }
 
-    public void SetScaleOnPlay()
-    {
-        transform.localScale = new Vector3(10, 10, 10);
-    }
 }
