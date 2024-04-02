@@ -3045,7 +3045,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.059827983, y: 0.009405553}
+  m_Offset: {x: -0.053273678, y: 0.002718985}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3056,7 +3056,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2.3539524, y: 2.7087584}
   m_EdgeRadius: 0
 --- !u!212 &1536179532
 SpriteRenderer:
@@ -3119,8 +3119,8 @@ Transform:
   m_GameObject: {fileID: 1536179527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.11, y: 2.0593, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.8427, y: -0.378, z: 0}
+  m_LocalScale: {x: 0.6336047, y: 0.47600687, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -20099,6 +20099,7 @@ GameObject:
   - component: {fileID: 1833258293}
   - component: {fileID: 1833258292}
   - component: {fileID: 1833258291}
+  - component: {fileID: 1833258294}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -20180,6 +20181,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1833258294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833258290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d677d4ed7f0c54385545ba408cf036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1536179533}
+  smoothSpeed: 0.125
+  offset: {x: 2, y: 2, z: 2}
 --- !u!4 &1936296921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 685838153270246763, guid: a32e7a238e5c00f48916ca3ceb53e1c4,
