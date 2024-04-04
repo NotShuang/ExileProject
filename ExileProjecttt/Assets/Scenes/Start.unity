@@ -22567,8 +22567,8 @@ MonoBehaviour:
   smoothSpeed: 0.125
   offset: {x: 0, y: 2, z: -5}
   zoomSpeed: 2
-  minZoom: 5
-  maxZoom: 10
+  minZoom: 2
+  maxZoom: 5
 --- !u!4 &1936296921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 685838153270246763, guid: a32e7a238e5c00f48916ca3ceb53e1c4,
