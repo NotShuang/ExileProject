@@ -3170,6 +3170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3797e3c86b9de454aa3e5bda335c2b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1411363613}
 --- !u!50 &1411363609
 Rigidbody2D:
   serializedVersion: 4
@@ -3318,7 +3319,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411363606}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8e0c56889a4556f4b839a780aeee91a8, type: 2}
   m_CullingMode: 0
@@ -22794,6 +22795,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1411363612}
     m_Modifications:
+    - target: {fileID: 8459761256327841952, guid: 8d33425d7a2a5394ba6dc22e7de6306c,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8459761256327841954, guid: 8d33425d7a2a5394ba6dc22e7de6306c,
         type: 3}
       propertyPath: m_Pivot.x

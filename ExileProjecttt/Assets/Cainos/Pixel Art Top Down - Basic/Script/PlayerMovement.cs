@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 velocity = Vector2.zero;
     float dashDuration = 0.5f;
     bool isDashing = false;
-    float horizontalMove = 0f
+
     public Animator animator; 
 
     void Start()
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
         FlipSprite();
 
-        animator.SetFloat("speed", horizontalMove)
+
     }
 
     private void FixedUpdate()
