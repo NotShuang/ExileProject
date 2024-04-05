@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     float dashDuration = 0.5f;
     bool isDashing = false;
 
+    public Animator animator; 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         FlipSprite();
+
+
     }
 
     private void FixedUpdate()
@@ -69,4 +73,6 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = originalMoveSpeed;
         isDashing = false;
     }
+
+
 }
