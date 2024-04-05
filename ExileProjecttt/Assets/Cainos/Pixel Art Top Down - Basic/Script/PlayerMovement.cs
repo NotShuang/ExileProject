@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,47 +8,65 @@ public class PlayerMovement : MonoBehaviour
     float moveSpeed = 5f;
     bool isFacingRight = true;
     Rigidbody2D rb;
-
-    // New variable to store the player's velocity
     Vector2 velocity = Vector2.zero;
+    float dashDuration = 0.5f;
+    bool isDashing = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        // Check for dash input (Space button)
+        if (Input.GetButtonDown("Jump") && !isDashing)
+        {
+            StartCoroutine(Dash());
+        }
+
         FlipSprite();
     }
 
     private void FixedUpdate()
     {
-        // Create a new vector for target velocity based on horizontal and vertical inputs
         Vector2 targetVelocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
-
-        // Use SmoothDamp to interpolate the player's velocity toward the target velocity
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.1f);
     }
 
     void FlipSprite()
     {
-        // Check if the player is moving horizontally
         if (horizontalInput != 0)
         {
             isFacingRight = horizontalInput > 0;
         }
-        // Check if the player is moving vertically
         else if (verticalInput != 0)
         {
             isFacingRight = verticalInput > 0;
         }
 
-        // Flip the sprite based on the direction
         transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
+    }
+
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        float startTime = Time.time;
+        float endTime = startTime + dashDuration;
+
+        float originalMoveSpeed = moveSpeed;
+        moveSpeed *= 2;
+
+        while (Time.time < endTime)
+        {
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+            yield return null;
+        }
+
+        moveSpeed = originalMoveSpeed;
+        isDashing = false;
     }
 }
