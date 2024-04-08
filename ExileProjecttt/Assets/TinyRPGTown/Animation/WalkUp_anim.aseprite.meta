@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af4a60d7136ac534ba22542bfac41ce2
+guid: ad44cf5e149c4ee49a78d28f6731f5b0
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 20
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -50,7 +50,7 @@ ScriptedImporter:
     flipbookColumns: 0
     ignorePngGamma: 0
     cookieMode: 0
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638477476553093625
+  platformSettingsDirtyTick: 638479212609005449
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: WalkLeft_anim_Frame_0
+  - name: WalkUp_anim_Frame_0
     originalName: 
-    pivot: {x: 0.42857146, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 7
-      height: 15
-    spriteID: 566ac002982b40e4392cee082f9b7338
+      width: 14
+      height: 16
+    spriteID: 77187db4b2bdb0c43aaa10b63844745a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: WalkLeft_anim_Frame_1
+  - name: WalkUp_anim_Frame_1
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.5, y: -0.06666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 27
-      width: 7
+      y: 28
+      width: 14
       height: 15
-    spriteID: 16cdc8c9d03e6e54d889b7f12f3fa0f4
+    spriteID: c4d7d878174405041b7866bbb791e5e6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 27}
-  - name: WalkLeft_anim_Frame_2
+    uvTransform: {x: 4, y: 28}
+  - name: WalkUp_anim_Frame_2
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.5, y: -0.06666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 19
+      x: 26
       y: 4
-      width: 7
+      width: 14
       height: 15
-    spriteID: f3e8024b312600c448caeac38b9d213a
+    spriteID: 46f9bbd4f047acf4dbb8eaa32eeca2e4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,40 +180,40 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 19, y: 4}
+    uvTransform: {x: 26, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1321809982
-    name: WalkLeft_anim
+    guid: -1737061566
+    name: WalkUp_anim
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: WalkLeft_anim_Frame_0
+    - name: WalkUp_anim_Frame_0
       frameIndex: 0
       cellRect:
-        x: 5
+        x: 1
         y: 0
-        width: 7
-        height: 15
-      spriteId: 566ac002982b40e4392cee082f9b7338
-    - name: WalkLeft_anim_Frame_1
+        width: 14
+        height: 16
+      spriteId: 77187db4b2bdb0c43aaa10b63844745a
+    - name: WalkUp_anim_Frame_1
       frameIndex: 1
       cellRect:
-        x: 4
-        y: 0
-        width: 7
+        x: 1
+        y: 1
+        width: 14
         height: 15
-      spriteId: 16cdc8c9d03e6e54d889b7f12f3fa0f4
-    - name: WalkLeft_anim_Frame_2
+      spriteId: c4d7d878174405041b7866bbb791e5e6
+    - name: WalkUp_anim_Frame_2
       frameIndex: 2
       cellRect:
-        x: 4
-        y: 0
-        width: 7
+        x: 1
+        y: 1
+        width: 14
         height: 15
-      spriteId: f3e8024b312600c448caeac38b9d213a
+      spriteId: 46f9bbd4f047acf4dbb8eaa32eeca2e4
     linkedCells: []
     parentIndex: -1
   platformSettings:

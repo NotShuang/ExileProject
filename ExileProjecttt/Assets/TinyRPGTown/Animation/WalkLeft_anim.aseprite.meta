@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e735ed54f76711049ae4adb222b6c651
+guid: af4a60d7136ac534ba22542bfac41ce2
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 20
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -50,7 +50,7 @@ ScriptedImporter:
     flipbookColumns: 0
     ignorePngGamma: 0
     cookieMode: 0
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638477476553093625
+  platformSettingsDirtyTick: 638479212609005449
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: WalkRight_anim_Frame_0
+  - name: WalkLeft_anim_Frame_0
     originalName: 
-    pivot: {x: 0.625, y: 0}
+    pivot: {x: 0.42857146, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 8
+      width: 7
       height: 15
-    spriteID: ecd87cba3bc52ff48b8537bdff576a2b
+    spriteID: 566ac002982b40e4392cee082f9b7338
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: WalkRight_anim_Frame_1
+  - name: WalkLeft_anim_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5714286, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 27
-      width: 8
+      width: 7
       height: 15
-    spriteID: e9d6eeb4a878b0544ba26bb828801653
+    spriteID: 16cdc8c9d03e6e54d889b7f12f3fa0f4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,18 +161,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 27}
-  - name: WalkRight_anim_Frame_2
+  - name: WalkLeft_anim_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5714286, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 20
+      x: 19
       y: 4
-      width: 8
+      width: 7
       height: 15
-    spriteID: a803311c8dea98d47bd7861f2c8cacd2
+    spriteID: f3e8024b312600c448caeac38b9d213a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,40 +180,40 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 20, y: 4}
+    uvTransform: {x: 19, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2012733949
-    name: WalkRight_anim
+    guid: 1321809982
+    name: WalkLeft_anim
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: WalkRight_anim_Frame_0
+    - name: WalkLeft_anim_Frame_0
       frameIndex: 0
       cellRect:
-        x: 3
+        x: 5
         y: 0
-        width: 8
+        width: 7
         height: 15
-      spriteId: ecd87cba3bc52ff48b8537bdff576a2b
-    - name: WalkRight_anim_Frame_1
+      spriteId: 566ac002982b40e4392cee082f9b7338
+    - name: WalkLeft_anim_Frame_1
       frameIndex: 1
       cellRect:
         x: 4
         y: 0
-        width: 8
+        width: 7
         height: 15
-      spriteId: e9d6eeb4a878b0544ba26bb828801653
-    - name: WalkRight_anim_Frame_2
+      spriteId: 16cdc8c9d03e6e54d889b7f12f3fa0f4
+    - name: WalkLeft_anim_Frame_2
       frameIndex: 2
       cellRect:
         x: 4
         y: 0
-        width: 8
+        width: 7
         height: 15
-      spriteId: a803311c8dea98d47bd7861f2c8cacd2
+      spriteId: f3e8024b312600c448caeac38b9d213a
     linkedCells: []
     parentIndex: -1
   platformSettings:
