@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator; 
 
+    public AudioSource dash;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         // Check for dash input (Space button)
         if (Input.GetButtonDown("Jump") && !isDashing)
         {
+            dash.Play();
             StartCoroutine(Dash());
         }
 
