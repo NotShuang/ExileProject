@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 50ad30c39f1a0e34787514c0ab61c62f
+guid: f4218647b96445d48b095754295111fa
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ ScriptedImporter:
     flipbookColumns: 0
     ignorePngGamma: 0
     cookieMode: 0
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638477476553093625
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: WalkingDown_anim_Frame_0
+  - name: Eshkar AttackBack_anim_Frame_0
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 14
       height: 16
-    spriteID: 5875e7735b5e8a3439b725710163db76
+    spriteID: 8c4f64528092d89428523bb17a5e5a89
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,7 +141,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: WalkingDown_anim_Frame_1
+  - name: Eshkar AttackBack_anim_Frame_1
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -151,8 +151,8 @@ ScriptedImporter:
       x: 4
       y: 28
       width: 14
-      height: 15
-    spriteID: 6d7ef93bede4c9f4da052462abb3cb6d
+      height: 16
+    spriteID: e6f4d2094b07d7c49a3ea2128b80e1ab
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,7 +161,67 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 28}
-  - name: WalkingDown_anim_Frame_2
+  - name: Eshkar AttackBack_anim_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 14
+      height: 16
+    spriteID: c9a0b5034acd63c43bdad06e7f4e935d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
+  - name: Eshkar AttackBack_anim_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 14
+      height: 16
+    spriteID: f7cb286b71bf6864b989f72b398198c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: Eshkar AttackBack_anim_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 100
+      width: 14
+      height: 16
+    spriteID: 773d02ffb4bd089458852666096625ba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 100}
+  - name: Eshkar AttackBack_anim_Frame_5
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -171,8 +231,8 @@ ScriptedImporter:
       x: 26
       y: 4
       width: 14
-      height: 14
-    spriteID: 829090dc1747195488544b4a78195709
+      height: 16
+    spriteID: abba7cc91f41c324bac7ad857a5fa82c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,67 +241,123 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 26, y: 4}
+  - name: Eshkar AttackBack_anim_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 28
+      width: 14
+      height: 16
+    spriteID: 0060f4c8bb170ff498fe9f19c4ac4dc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 28}
+  - name: Eshkar AttackBack_anim_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 52
+      width: 14
+      height: 16
+    spriteID: ba1dbffb5e869444d8cc00ccd9f53895
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 52}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -413277005
-    name: WalkingDown_anim
+    guid: 934535477
+    name: Eshkar AttackBack_anim
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: WalkingDown_anim_Frame_0
+    - name: Eshkar AttackBack_anim_Frame_0
       frameIndex: 0
       cellRect:
         x: 1
         y: 0
         width: 14
         height: 16
-      spriteId: 5875e7735b5e8a3439b725710163db76
-    - name: WalkingDown_anim_Frame_1
+      spriteId: 8c4f64528092d89428523bb17a5e5a89
+    - name: Eshkar AttackBack_anim_Frame_1
       frameIndex: 1
       cellRect:
         x: 1
         y: 0
         width: 14
-        height: 15
-      spriteId: 6d7ef93bede4c9f4da052462abb3cb6d
-    - name: WalkingDown_anim_Frame_2
+        height: 16
+      spriteId: e6f4d2094b07d7c49a3ea2128b80e1ab
+    - name: Eshkar AttackBack_anim_Frame_2
       frameIndex: 2
       cellRect:
         x: 1
         y: 0
         width: 14
-        height: 14
-      spriteId: 829090dc1747195488544b4a78195709
+        height: 16
+      spriteId: c9a0b5034acd63c43bdad06e7f4e935d
+    - name: Eshkar AttackBack_anim_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 1
+        y: 0
+        width: 14
+        height: 16
+      spriteId: f7cb286b71bf6864b989f72b398198c5
+    - name: Eshkar AttackBack_anim_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 1
+        y: 0
+        width: 14
+        height: 16
+      spriteId: 773d02ffb4bd089458852666096625ba
+    - name: Eshkar AttackBack_anim_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 1
+        y: 0
+        width: 14
+        height: 16
+      spriteId: abba7cc91f41c324bac7ad857a5fa82c
+    - name: Eshkar AttackBack_anim_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 1
+        y: 0
+        width: 14
+        height: 16
+      spriteId: 0060f4c8bb170ff498fe9f19c4ac4dc3
+    - name: Eshkar AttackBack_anim_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 1
+        y: 0
+        width: 14
+        height: 16
+      spriteId: ba1dbffb5e869444d8cc00ccd9f53895
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  generatePhysicsShape: 1
+  platformSettings: []
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}

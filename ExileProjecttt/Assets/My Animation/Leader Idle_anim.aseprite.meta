@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af4a60d7136ac534ba22542bfac41ce2
+guid: 9cb7dc9939854e848bb20f4893f5f0e5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ ScriptedImporter:
     flipbookColumns: 0
     ignorePngGamma: 0
     cookieMode: 0
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638477476553093625
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: WalkLeft_anim_Frame_0
+  - name: Leader Idle_anim_Frame_0
     originalName: 
-    pivot: {x: 0.42857146, y: 0}
+    pivot: {x: 0.53333336, y: -0.06666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 7
+      width: 15
       height: 15
-    spriteID: 566ac002982b40e4392cee082f9b7338
+    spriteID: dc75358ecc852e044a72cc704510d90b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +141,58 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: WalkLeft_anim_Frame_1
+  - name: Leader Idle_anim_Frame_1
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.53333336, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 27
+      y: 26
+      width: 15
+      height: 14
+    spriteID: 0ffeeb3c94c8b3644a5b9be757b6d3ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 27, y: 26}
+  - name: Leader Idle_anim_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 27
+      y: 4
+      width: 16
+      height: 14
+    spriteID: b10ac04d7e61b1241b9408d589bedc8b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 27, y: 4}
+  - name: Leader Idle_anim_Frame_3
+    originalName: 
+    pivot: {x: 0.4666667, y: -0.06666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 27
-      width: 7
+      width: 15
       height: 15
-    spriteID: 16cdc8c9d03e6e54d889b7f12f3fa0f4
+    spriteID: f7ab0328dd058d54099003ae4b9f6947
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,87 +201,51 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 27}
-  - name: WalkLeft_anim_Frame_2
-    originalName: 
-    pivot: {x: 0.5714286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 19
-      y: 4
-      width: 7
-      height: 15
-    spriteID: f3e8024b312600c448caeac38b9d213a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 19, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1321809982
-    name: WalkLeft_anim
+    guid: 1789715491
+    name: Leader Idle_anim
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: WalkLeft_anim_Frame_0
+    - name: Leader Idle_anim_Frame_0
       frameIndex: 0
       cellRect:
-        x: 5
-        y: 0
-        width: 7
+        x: 0
+        y: 1
+        width: 15
         height: 15
-      spriteId: 566ac002982b40e4392cee082f9b7338
-    - name: WalkLeft_anim_Frame_1
+      spriteId: dc75358ecc852e044a72cc704510d90b
+    - name: Leader Idle_anim_Frame_1
       frameIndex: 1
       cellRect:
-        x: 4
-        y: 0
-        width: 7
-        height: 15
-      spriteId: 16cdc8c9d03e6e54d889b7f12f3fa0f4
-    - name: WalkLeft_anim_Frame_2
+        x: 0
+        y: 1
+        width: 15
+        height: 14
+      spriteId: 0ffeeb3c94c8b3644a5b9be757b6d3ae
+    - name: Leader Idle_anim_Frame_2
       frameIndex: 2
       cellRect:
-        x: 4
-        y: 0
-        width: 7
+        x: 0
+        y: 1
+        width: 16
+        height: 14
+      spriteId: b10ac04d7e61b1241b9408d589bedc8b
+    - name: Leader Idle_anim_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 1
+        y: 1
+        width: 15
         height: 15
-      spriteId: f3e8024b312600c448caeac38b9d213a
+      spriteId: f7ab0328dd058d54099003ae4b9f6947
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  generatePhysicsShape: 1
+  platformSettings: []
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
