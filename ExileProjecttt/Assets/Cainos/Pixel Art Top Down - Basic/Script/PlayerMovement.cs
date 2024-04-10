@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private GameObject tribeLeader; // Reference to the tribe leader GameObject
     private TribeLeaderDialogue tribeLeaderDialogue;
 
+    public AudioSource dash;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         // Check for dash input (Space button)
         if (Input.GetButtonDown("Jump") && !isDashing)
         {
+            dash.Play();
             StartCoroutine(Dash());
         }
 
