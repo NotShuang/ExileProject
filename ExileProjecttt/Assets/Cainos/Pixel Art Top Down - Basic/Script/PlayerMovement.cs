@@ -11,14 +11,17 @@ public class PlayerMovement : MonoBehaviour
     Vector2 velocity = Vector2.zero;
     float dashDuration = 0.5f;
     bool isDashing = false;
+    public Animator animator;
 
-    public Animator animator; 
 
     public AudioSource dash;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+      
+
     }
 
     void Update()
@@ -35,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
         FlipSprite();
 
-
+        // Check for interaction with the tribe leader
+        
     }
 
     private void FixedUpdate()
@@ -63,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         float startTime = Time.time;
         float endTime = startTime + dashDuration;
-
         float originalMoveSpeed = moveSpeed;
         moveSpeed *= 2;
 
