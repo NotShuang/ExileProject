@@ -9,17 +9,24 @@ public class PlayerMovement : MonoBehaviour
     bool isFacingRight = true;
     Rigidbody2D rb;
     Vector2 velocity = Vector2.zero;
-
     float dashDuration = 0.5f;
-    float dashForce = 15f;
     bool isDashing = false;
-
     public Animator animator;
-    public AudioSource dashAudio;
+
+    public float interactDistance = 2f; // The distance at which the player can interact with the tribe leader
+    private GameObject tribeLeader; // Reference to the tribe leader GameObject
+    private TribeLeaderDialogue tribeLeaderDialogue;
+
+    public AudioSource dash;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // Find the GameObject with the name "Tribe Leader" in the scene
+        tribeLeader = GameObject.Find("Tribe Leader");
+        tribeLeaderDialogue = tribeLeader.GetComponent<TribeLeaderDialogue>();
+
     }
 
     void Update()
@@ -30,20 +37,23 @@ public class PlayerMovement : MonoBehaviour
         // Check for dash input (Space button)
         if (Input.GetButtonDown("Jump") && !isDashing)
         {
+            dash.Play();
             StartCoroutine(Dash());
         }
 
         FlipSprite();
+
+        // Check for interaction with the tribe leader
+        if (Input.GetButtonDown("Interact"))
+        {
+            InteractWithTribeLeader();
+        }
     }
 
     private void FixedUpdate()
     {
         Vector2 targetVelocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
-
-        if (!isDashing)
-        {
-            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.1f);
-        }
+        rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.1f);
     }
 
     void FlipSprite()
@@ -63,16 +73,28 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dash()
     {
         isDashing = true;
-        dashAudio.Play();
-
+        float startTime = Time.time;
+        float endTime = startTime + dashDuration;
         float originalMoveSpeed = moveSpeed;
-        moveSpeed *= dashForce;
+        moveSpeed *= 2;
 
-        rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
-
-        yield return new WaitForSeconds(dashDuration);
+        while (Time.time < endTime)
+        {
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+            yield return null;
+        }
 
         moveSpeed = originalMoveSpeed;
         isDashing = false;
+    }
+
+    void InteractWithTribeLeader()
+    {
+        // Check if the tribe leader is within the interaction distance
+        if (tribeLeader != null && Vector2.Distance(transform.position, tribeLeader.transform.position) <= interactDistance)
+        {
+            // Interact with the tribe leader
+            tribeLeaderDialogue.DisplayNextLine();
+        }
     }
 }
