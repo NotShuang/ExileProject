@@ -9,19 +9,17 @@ public class PlayerMovement : MonoBehaviour
     bool isFacingRight = true;
     Rigidbody2D rb;
     Vector2 velocity = Vector2.zero;
+
     float dashDuration = 0.5f;
+    float dashForce = 15f;
     bool isDashing = false;
+
     public Animator animator;
-
-
-    public AudioSource dash;
+    public AudioSource dashAudio;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-      
-
     }
 
     void Update()
@@ -32,20 +30,20 @@ public class PlayerMovement : MonoBehaviour
         // Check for dash input (Space button)
         if (Input.GetButtonDown("Jump") && !isDashing)
         {
-            dash.Play();
             StartCoroutine(Dash());
         }
 
         FlipSprite();
-
-        // Check for interaction with the tribe leader
-        
     }
 
     private void FixedUpdate()
     {
         Vector2 targetVelocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
-        rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.1f);
+
+        if (!isDashing)
+        {
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.1f);
+        }
     }
 
     void FlipSprite()
@@ -65,20 +63,16 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dash()
     {
         isDashing = true;
-        float startTime = Time.time;
-        float endTime = startTime + dashDuration;
-        float originalMoveSpeed = moveSpeed;
-        moveSpeed *= 2;
+        dashAudio.Play();
 
-        while (Time.time < endTime)
-        {
-            rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
-            yield return null;
-        }
+        float originalMoveSpeed = moveSpeed;
+        moveSpeed *= dashForce;
+
+        rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+
+        yield return new WaitForSeconds(dashDuration);
 
         moveSpeed = originalMoveSpeed;
         isDashing = false;
     }
-
-
 }
