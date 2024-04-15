@@ -66,10 +66,11 @@ public class HealthSystemForDummies : MonoBehaviour
 
     void GotHitFor(float damage)
     {
-        if (!IsAlive) { return; }
-
-        float absoluteValue = Mathf.Abs(damage);
-        DecreaseCurrentHealthBy(absoluteValue);
+        if (!IsAlive) {
+            float absoluteValue = Mathf.Abs(damage);
+            DecreaseCurrentHealthBy(absoluteValue);
+            Debug.Log("yes");
+        }
     }
 
     void DecreaseCurrentHealthBy(float value)
