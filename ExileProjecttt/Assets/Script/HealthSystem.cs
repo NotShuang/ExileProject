@@ -17,6 +17,10 @@ public class HealthSystem : MonoBehaviour
     {
         return health;
     }
+    public float GetHealthPercent ()
+    {
+        return health / healthMax;
+    }
 
     public void Damage(int damageAmount)
     {
