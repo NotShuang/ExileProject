@@ -181,7 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogue: []
+  dialogue:
+  - I don't like you
   Button: {fileID: 0}
-  wordSpeed: 0
+  wordSpeed: 0.6
   playerIsClose: 0

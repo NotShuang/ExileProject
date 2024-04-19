@@ -101,8 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogue: []
-  wordSpeed: 0
+  dialogue:
+  - GET OUT!
+  - You are not Welcomed :(
+  Button: {fileID: 0}
+  wordSpeed: 0.06
   playerIsClose: 0
 --- !u!70 &6695120364794111521
 CapsuleCollider2D:
