@@ -8,13 +8,14 @@ public class AIChase : MonoBehaviour
     public float speed;
     public float distanceBetween;
     public float distance;
-    [SerializeField] private float attackDamage = 10f;
-    [SerializeField] private float attackSpeed = 1f;
-    private float canAttack;
+    public Animator animator;
+    float horizontalMove = 0f; 
+    float Speed = 0f; 
+    bool isTurningRight = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,19 +30,7 @@ public class AIChase : MonoBehaviour
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
         }
-    }
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            if (attackSpeed <= canAttack)
-            {
-                other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
-                canAttack = 0f;
-            }
-        } else
-        {
-            canAttack += Time.deltaTime;
-        }
+
+        animator.SetBool("isTurningRight", true);
     }
 }
