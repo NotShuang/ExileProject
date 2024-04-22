@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class AIChase : MonoBehaviour
 {
-    public GameObject player; 
+    public GameObject player;
     public float speed;
-    public float distanceBetween;
-    public float distance;
-    public Animator animator;
-    float horizontalMove = 0f; 
-    float Speed = 0f; 
-    bool isTurningRight = false;
+
+    private float distance;
+    private float distanceBetween; 
+    private float speedBetween;
+    public Rigidbody2D rb;
+        
+    private Vector2 moveDirection;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        Animate();
     }
 
     // Update is called once per frame
@@ -31,6 +34,11 @@ public class AIChase : MonoBehaviour
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
         }
 
-        animator.SetBool("isTurningRight", true);
+    }
+
+    void Animate()
+    {
+        anim.SetFloat("AnimMoveX", moveDirection.x);
+        anim.SetFloat("AnimMoveY", moveDirection.y);
     }
 }
