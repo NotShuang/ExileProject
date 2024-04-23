@@ -2042,9 +2042,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1411363606}
   speed: 2
-  distanceBetween: 0
-  distance: 0
-  animator: {fileID: 0}
+  rb: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!95 &650478239
 Animator:
   serializedVersion: 5
@@ -4507,6 +4506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthSlider: {fileID: 1813422605}
 --- !u!1001 &1417203754
 PrefabInstance:
   m_ObjectHideFlags: 0
