@@ -7,11 +7,16 @@ public class PlayerHealth : MonoBehaviour
 {
     private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private Slider healthSlider;
+    public Slider healthSlider;
 
     private void Start()
     {
         health = maxHealth;
+    }
+
+    private void Update()
+    {
+        healthSlider.value = health;
     }
     public void UpdateHealth(float mod)
     {
@@ -25,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Player Respawn");
         }
     }
-    private void OnGUI()
+    public void OnGUI()
     {
         healthSlider.value = health;
     }
