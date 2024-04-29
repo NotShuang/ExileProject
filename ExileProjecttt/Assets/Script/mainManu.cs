@@ -14,4 +14,9 @@ public class mainManu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ManuButton()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 }
