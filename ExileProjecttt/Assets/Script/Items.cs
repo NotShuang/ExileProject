@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerHealth playerHealth;
+    private float HP = 10;
+    public PlayerMovement playerMovement;
+    private float S = 3;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.gameObject.tag == "Player")
+        {
+            playerMovement.moveSpeed += S;
+            playerHealth.health += HP;
+            Destroy(gameObject);
+        }
     }
 }
