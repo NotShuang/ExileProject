@@ -51,13 +51,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipSprite()
     {
-        if (horizontalInput != 0)
+        if (horizontalInput < 0)
         {
-            isFacingRight = horizontalInput > 0;
+            isFacingRight = false;
         }
-        else if (verticalInput != 0)
+        else if (horizontalInput > 0)
         {
-            isFacingRight = verticalInput > 0;
+            isFacingRight = true;
         }
 
         transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
