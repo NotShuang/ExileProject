@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     float horizontalInput;
     float verticalInput;
-    float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     bool isFacingRight = true;
     Rigidbody2D rb;
     Vector2 velocity = Vector2.zero;
