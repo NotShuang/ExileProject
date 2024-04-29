@@ -11,20 +11,17 @@ public class PlayerMovement : MonoBehaviour
     Vector2 velocity = Vector2.zero;
     float dashDuration = 0.5f;
     bool isDashing = false;
-    public Animator animator;
-
+    Vector2 m_moveInput = Vector2.zero;
+    Animator m_animator;
     public float interactDistance = 2f; // The distance at which the player can interact with the tribe leader
     private GameObject tribeLeader; // Reference to the tribe leader GameObject
-
     public AudioSource dash;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        // Find the GameObject with the name "Tribe Leader" in the scene
-        
-
+        m_animator = GetComponent<Animator>();
+        OnMove();
     }
 
     void Update()
@@ -42,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
 
         // Check for interaction with the tribe leader
-        
+
+        OnMove(); // Call the OnMove method here
     }
 
     private void FixedUpdate()
@@ -83,5 +81,15 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
     }
 
-    
+    void OnMove()
+    {
+        m_moveInput.x = Input.GetAxisRaw("Horizontal");
+        m_moveInput.y = Input.GetAxisRaw("Vertical");
+
+        if (m_moveInput != Vector2.zero)
+        {
+            m_animator.SetFloat("xMove", m_moveInput.x);
+            m_animator.SetFloat("yMove", m_moveInput.y);
+        }
+    }
 }

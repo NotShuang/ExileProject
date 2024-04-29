@@ -4222,7 +4222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3797e3c86b9de454aa3e5bda335c2b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1411363613}
   interactDistance: 2
   dash: {fileID: 1411363615}
 --- !u!50 &1411363609
