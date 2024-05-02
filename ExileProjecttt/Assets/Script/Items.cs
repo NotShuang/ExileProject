@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
+    public AudioSource Munch;
     public PlayerHealth playerHealth;
     private float HP = 10;
     public PlayerMovement playerMovement;
@@ -16,6 +17,7 @@ public class Items : MonoBehaviour
             playerMovement.moveSpeed += S;
             playerHealth.health += HP;
             Destroy(gameObject);
+            Munch.Play();
         }
     }
 }
