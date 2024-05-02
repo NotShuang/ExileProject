@@ -17,11 +17,21 @@ public class PlayerMovement : MonoBehaviour
     private GameObject tribeLeader; // Reference to the tribe leader GameObject
     public AudioSource dash;
 
+    private RespawnManager respawnManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         OnMove();
+
+        respawnManager = FindObjectOfType<RespawnManager>();
+
+        // Check if the RespawnManager was found
+        if (respawnManager == null)
+        {
+            Debug.LogError("RespawnManager not found in the scene!");
+        }
     }
 
     void Update()
@@ -91,5 +101,21 @@ public class PlayerMovement : MonoBehaviour
             m_animator.SetFloat("xMove", m_moveInput.x);
             m_animator.SetFloat("yMove", m_moveInput.y);
         }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check for collisions with objects tagged as "Enemy"
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            HandlePlayerDeath();
+        }
+    }
+
+    private void HandlePlayerDeath()
+    {
+        // Call the RespawnPlayer method from the RespawnManager
+        respawnManager.RespawnPlayer();
     }
 }
