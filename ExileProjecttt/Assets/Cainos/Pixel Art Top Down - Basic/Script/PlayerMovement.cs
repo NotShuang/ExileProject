@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public ParticleSystem dust;
+
     float horizontalInput;
     float verticalInput;
     public float moveSpeed = 5f;
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipSprite()
     {
+        
         if (horizontalInput < 0)
         {
             isFacingRight = false;
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Dash()
     {
+        CreateDust();
         isDashing = true;
         float startTime = Time.time;
         float endTime = startTime + dashDuration;
@@ -83,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove()
     {
+        
         m_moveInput.x = Input.GetAxisRaw("Horizontal");
         m_moveInput.y = Input.GetAxisRaw("Vertical");
 
@@ -90,6 +95,11 @@ public class PlayerMovement : MonoBehaviour
         {
             m_animator.SetFloat("xMove", m_moveInput.x);
             m_animator.SetFloat("yMove", m_moveInput.y);
+            CreateDust();
         }
+    }
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
