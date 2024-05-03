@@ -10,6 +10,13 @@ public class Items : MonoBehaviour
     public PlayerMovement playerMovement;
     private float S = 3;
 
+    private void Update()
+    {
+        if(gameObject.tag == "Player")
+        {
+            Munch.Play();
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
