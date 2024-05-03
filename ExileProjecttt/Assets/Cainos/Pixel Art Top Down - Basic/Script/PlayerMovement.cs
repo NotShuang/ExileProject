@@ -28,12 +28,6 @@ public class PlayerMovement : MonoBehaviour
         OnMove();
 
         respawnManager = FindObjectOfType<RespawnManager>();
-
-        // Check if the RespawnManager was found
-        if (respawnManager == null)
-        {
-            Debug.LogError("RespawnManager not found in the scene!");
-        }
     }
 
     void Update()
