@@ -7,6 +7,8 @@ public class IdleDamage : MonoBehaviour
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackSpeed = 1f;
     private float canAttack;
+
+    public AudioSource Ouch;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class IdleDamage : MonoBehaviour
             if (attackSpeed <= canAttack)
             {
                 other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
+                Ouch.Play();
                 canAttack = 0f;
             }
             else
