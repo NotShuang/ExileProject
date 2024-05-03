@@ -7,7 +7,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     public Slider healthSlider;
 
-    private RespawnManager respawnManager; // Reference to the RespawnManager
+    private PlayerMovement playerMovement; // Reference to the PlayerMovement script
+    private Vector3 initialSpawnPosition; // Initial spawn position of the player
 
     private void Start()
     {
@@ -16,7 +17,9 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = health;
 
         // Find the RespawnManager in the scene
-        respawnManager = FindObjectOfType<RespawnManager>();
+        playerMovement = GetComponent<PlayerMovement>();
+
+        initialSpawnPosition = transform.position;
     }
 
     private void Update()
@@ -27,7 +30,6 @@ public class PlayerHealth : MonoBehaviour
     public void UpdateHealth(float mod)
     {
         health += mod;
-
         if (health > maxHealth)
         {
             health = maxHealth;
@@ -36,12 +38,22 @@ public class PlayerHealth : MonoBehaviour
         {
             health = 0f;
             Debug.Log("Player Respawn");
-
-            // Call the RespawnPlayer method from the RespawnManager
-            respawnManager.RespawnPlayer();
+            RespawnPlayer();
         }
 
         // Update the healthSlider value
         healthSlider.value = health;
+    }
+
+    private void RespawnPlayer()
+    {
+        // Reset the player's position to the initial spawn position
+        transform.position = initialSpawnPosition;
+
+        // Reset the player's health to the maximum value
+        health = maxHealth;
+
+        // Reset any other player-related variables or components here
+        // ...
     }
 }
