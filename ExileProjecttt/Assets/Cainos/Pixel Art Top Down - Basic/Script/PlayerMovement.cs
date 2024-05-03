@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipSprite()
     {
-        
+
         if (horizontalInput < 0)
         {
             isFacingRight = false;
@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove()
     {
-        
+
         m_moveInput.x = Input.GetAxisRaw("Horizontal");
         m_moveInput.y = Input.GetAxisRaw("Vertical");
 
@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
             CreateDust();
         }
     }
-<<<<<<< HEAD
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -124,10 +124,11 @@ public class PlayerMovement : MonoBehaviour
     {
         // Call the RespawnPlayer method from the RespawnManager
         respawnManager.RespawnPlayer();
-=======
-    void CreateDust()
-    {
-        dust.Play();
->>>>>>> fcef4700ef4c072b27da9ac651aae3931ed4df35
+
+        void CreateDust()
+        {
+            dust.Play();
+
+        }
     }
 }
