@@ -108,6 +108,11 @@ public class PlayerMovement : MonoBehaviour
             CreateDust();
         }
     }
+    void CreateDust()
+    {
+        dust.Play();
+
+    }
 
 
 
@@ -124,11 +129,5 @@ public class PlayerMovement : MonoBehaviour
     {
         // Call the RespawnPlayer method from the RespawnManager
         respawnManager.RespawnPlayer();
-
-        void CreateDust()
-        {
-            dust.Play();
-
-        }
     }
 }
