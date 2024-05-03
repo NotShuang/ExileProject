@@ -14,10 +14,10 @@ public class Items : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            Munch.Play();
             playerMovement.moveSpeed += S;
             playerHealth.health += HP;
             Destroy(gameObject);
-            Munch.Play();
         }
     }
 }
