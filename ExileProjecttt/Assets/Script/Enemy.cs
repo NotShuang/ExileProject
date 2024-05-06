@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public AudioSource Ouch;
+    
     public float speed = 3f;
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackSpeed = 1f;
     private float canAttack;
     private Transform target;
     private PlayerHealth playerHealth; // Reference to the PlayerHealth component
+
 
     void Update()
     {
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
                 if (attackSpeed <= canAttack)
                 {
                     playerHealth.UpdateHealth(-attackDamage);
-                    Ouch.Play();
+                  
                     canAttack = 0f;
                 }
                 else
