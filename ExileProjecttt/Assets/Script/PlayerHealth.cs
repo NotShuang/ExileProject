@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private PlayerMovement playerMovement; // Reference to the PlayerMovement script
     private Vector3 initialSpawnPosition; // Initial spawn position of the player
 
+    public AudioSource Ouch;
     private void Start()
     {
         health = maxHealth;
@@ -36,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (health <= 0f)
         {
+            Ouch.Play();
             health = 0f;
             Debug.Log("Player Respawn");
             RespawnPlayer();
