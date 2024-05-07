@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,12 +21,16 @@ public class PlayerMovement : MonoBehaviour
     private RespawnManager respawnManager;
     public float attackAnimationDuration = 0.5f; // Duration of the attack animation
 
+
+    private Animator attack;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         OnMove();
         respawnManager = FindObjectOfType<RespawnManager>();
+        attack = GetComponent<Animator>();
     }
 
     void Update()
@@ -112,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         // Check for collisions with objects tagged as "Enemy"
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            attack.SetTrigger("isAttacking");
             HandlePlayerDeath();
         }
     }
