@@ -1,30 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    public AudioSource Munch;
+    public AudioSource munchtSound; // Reference to the munch sound
     public PlayerHealth playerHealth;
-    private float HP = 10;
+    private float healthBonus = 10f;
     public PlayerMovement playerMovement;
-    private float S = 3;
+    private float speedBonus = 3f;
+    public GameObject soundSourceGameObject;
 
-    private void Update()
+    void Start()
     {
-        if(gameObject.tag == "Player")
-        {
-            Munch.Play();
-        }
+        // Get the AudioSource component from the assigned GameObject
+        munchtSound = soundSourceGameObject.GetComponent<AudioSource>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            Munch.Play();
-            playerMovement.moveSpeed += S;
-            playerHealth.health += HP;
-            Destroy(gameObject);
+            Debug.Log("Entering trigger");
+            munchtSound.Play(); // Play the munch sound
+            Debug.Log("After playing sound");
+            playerMovement.moveSpeed += speedBonus; // Increase player speed
+            playerHealth.UpdateHealth(healthBonus); // Increase player health
+            Destroy(gameObject); // Destroy the apple object
         }
     }
 }
