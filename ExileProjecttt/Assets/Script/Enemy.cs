@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private PlayerHealth playerHealth; // Reference to the PlayerHealth component
 
+    public float EnemyHealth;
+
 
     
     
@@ -21,13 +23,16 @@ public class Enemy : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+            
         }
+        
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
+            
             // Get a reference to the PlayerHealth component
             if (playerHealth == null)
             {
@@ -47,6 +52,14 @@ public class Enemy : MonoBehaviour
                 {
                     canAttack += Time.deltaTime;
                 }
+            }
+            if (other.gameObject.tag == "Player" && EnemyHealth > 0)
+            {
+                EnemyHealth -= 10f;
+            }
+            else if (EnemyHealth <= 0)
+            {
+                Destroy(gameObject);
             }
         }
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,12 +21,16 @@ public class PlayerMovement : MonoBehaviour
     private RespawnManager respawnManager;
     public float attackAnimationDuration = 0.5f;
 
+
+    private Animator attack;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         OnMove();
         respawnManager = FindObjectOfType<RespawnManager>();
+        attack = GetComponent<Animator>();
     }
 
     void Update()
@@ -105,12 +110,20 @@ public class PlayerMovement : MonoBehaviour
         dust.Play();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         // Check for collisions with objects tagged as "Enemy"
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            attack.SetBool("isAttacking", true);
             HandlePlayerDeath();
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            attack.SetBool("isAttacking", false);
         }
     }
 
