@@ -102,7 +102,7 @@ MonoBehaviour:
   munchtSound: {fileID: 7278486068390016897}
   playerHealth: {fileID: 0}
   playerMovement: {fileID: 0}
-  soundSourceGameObject: {fileID: 0}
+  soundSourceGameObject: {fileID: 6126752021014886457}
 --- !u!61 &6261257432163951009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0546912
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
