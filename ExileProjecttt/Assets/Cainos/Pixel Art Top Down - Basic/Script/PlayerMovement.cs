@@ -112,13 +112,20 @@ public class PlayerMovement : MonoBehaviour
         dust.Play();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         // Check for collisions with objects tagged as "Enemy"
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            attack.SetTrigger("isAttacking");
+            attack.SetBool("isAttacking", true);
             HandlePlayerDeath();
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            attack.SetBool("isAttacking", false);
         }
     }
 

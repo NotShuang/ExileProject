@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3271251962962285606}
   - component: {fileID: 6261257432163951009}
   - component: {fileID: 7278486068390016897}
+  - component: {fileID: 8350660987169173463}
+  - component: {fileID: 7792010057048435340}
   m_Layer: 0
   m_Name: UI_Icon_Apple 1
   m_TagString: Untagged
@@ -100,8 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Munch: {fileID: 7278486068390016897}
-  playerHealth: {fileID: 0}
-  playerMovement: {fileID: 0}
+  playerHealth: {fileID: 8350660987169173463}
+  playerMovement: {fileID: 7792010057048435340}
 --- !u!61 &6261257432163951009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,7 +159,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f571fd369d8d143ff85ba68229363559, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9fe330231cc2d4a01aa086aba00b09fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -243,3 +245,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8350660987169173463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126752021014886457}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3d08e908d49ce45a5e4eab3775a4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  healthSlider: {fileID: 0}
+--- !u!114 &7792010057048435340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126752021014886457}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3797e3c86b9de454aa3e5bda335c2b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dust: {fileID: 0}
+  moveSpeed: 5
+  interactDistance: 2
+  dash: {fileID: 0}
+  attackAnimationDuration: 0.5
