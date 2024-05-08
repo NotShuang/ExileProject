@@ -13,14 +13,13 @@ public class PlayerMovement : MonoBehaviour
     Vector2 velocity = Vector2.zero;
     float dashDuration = 0.5f;
     bool isDashing = false;
-    Vector2 m_moveInput = Vector2.zero;
-    Animator m_animator;
-    public float interactDistance = 2f; // The distance at which the player can interact with the tribe leader
-    private GameObject tribeLeader; // Reference to the tribe leader GameObject
-    public AudioSource dash;
-    public AudioSource Walk;
+    Vector2 moveInput = Vector2.zero;
+    Animator animator;
+    public float interactDistance = 2f;
+    private GameObject tribeLeader;
+    public AudioSource dashSound; // Reference to the dash sound
     private RespawnManager respawnManager;
-    public float attackAnimationDuration = 0.5f; // Duration of the attack animation
+    public float attackAnimationDuration = 0.5f;
 
 
     private Animator attack;
@@ -28,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        m_animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         OnMove();
         respawnManager = FindObjectOfType<RespawnManager>();
         attack = GetComponent<Animator>();
@@ -39,17 +38,15 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        // Check for dash input (Space button)
         if (Input.GetButtonDown("Jump") && !isDashing)
         {
-            dash.Play();
+            dashSound.Play(); // Play the dash sound
             StartCoroutine(Dash());
         }
 
         FlipSprite();
-        OnMove(); // Call the OnMove method here
+        OnMove();
 
-        // Check for attack input (Left Mouse Button)
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
@@ -97,17 +94,14 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove()
     {
-        m_moveInput.x = Input.GetAxisRaw("Horizontal");
-        m_moveInput.y = Input.GetAxisRaw("Vertical");
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
 
-        if (m_moveInput != Vector2.zero)
+        if (moveInput != Vector2.zero)
         {
-            m_animator.SetFloat("xMove", m_moveInput.x);
-            m_animator.SetFloat("yMove", m_moveInput.y);
-            Walk.Play();
+            animator.SetFloat("xMove", moveInput.x);
+            animator.SetFloat("yMove", moveInput.y);
             CreateDust();
-            
-            
         }
     }
 
@@ -146,12 +140,12 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator AttackAnimation()
     {
-        m_animator.SetBool("isAttacking", true);
+        animator.SetBool("isAttacking", true);
         // Add any additional attack logic here, such as handling cooldowns or applying damage
 
         // Wait for the attack animation to finish
         yield return new WaitForSeconds(attackAnimationDuration);
 
-        m_animator.SetBool("isAttacking", false);
+        animator.SetBool("isAttacking", false);
     }
 }
