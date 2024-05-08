@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - NPC
+  - SoundSource
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - SoundSource
   - 
   - 
   - 
@@ -54,4 +55,7 @@ TagManager:
     locked: 0
   - name: Effects
     uniqueID: 3176188639
+    locked: 0
+  - name: SoundSource
+    uniqueID: 2138712103
     locked: 0

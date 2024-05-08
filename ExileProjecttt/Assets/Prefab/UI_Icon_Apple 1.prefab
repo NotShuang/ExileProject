@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7278486068390016897}
   m_Layer: 0
   m_Name: UI_Icon_Apple 1
-  m_TagString: Untagged
+  m_TagString: SoundSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,9 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796e8294aeea58b48942e9a53566864b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Munch: {fileID: 7278486068390016897}
+  munchtSound: {fileID: 7278486068390016897}
   playerHealth: {fileID: 0}
   playerMovement: {fileID: 0}
+  soundSourceGameObject: {fileID: 0}
 --- !u!61 &6261257432163951009
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     private PlayerHealth playerHealth; // Reference to the PlayerHealth component
 
 
+    
+    
     void Update()
     {
         if (target != null)
