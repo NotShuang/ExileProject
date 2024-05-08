@@ -179,7 +179,7 @@ MonoBehaviour:
   dust: {fileID: 7672314937513101281}
   moveSpeed: 5
   interactDistance: 2
-  dash: {fileID: 6242447938427969625}
+  dashSound: {fileID: 6242447938427969625}
   attackAnimationDuration: 0.5
 --- !u!95 &7383996067064057995
 Animator:
