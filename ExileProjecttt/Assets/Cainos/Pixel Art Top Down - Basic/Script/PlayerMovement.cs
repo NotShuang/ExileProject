@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float interactDistance = 2f; // The distance at which the player can interact with the tribe leader
     private GameObject tribeLeader; // Reference to the tribe leader GameObject
     public AudioSource dash;
+    public AudioSource Walk;
     private RespawnManager respawnManager;
     public float attackAnimationDuration = 0.5f; // Duration of the attack animation
 
@@ -103,7 +104,10 @@ public class PlayerMovement : MonoBehaviour
         {
             m_animator.SetFloat("xMove", m_moveInput.x);
             m_animator.SetFloat("yMove", m_moveInput.y);
+            Walk.Play();
             CreateDust();
+            
+            
         }
     }
 
