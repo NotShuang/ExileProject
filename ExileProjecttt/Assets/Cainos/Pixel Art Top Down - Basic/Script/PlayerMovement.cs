@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource dashSound; // Reference to the dash sound
     private RespawnManager respawnManager;
     public float attackAnimationDuration = 0.5f;
+    public AudioSource Walk;
 
 
     private Animator attack;
@@ -102,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("xMove", moveInput.x);
             animator.SetFloat("yMove", moveInput.y);
             CreateDust();
+            Walk.Play();
         }
     }
 
