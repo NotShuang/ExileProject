@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
                     if (attackSpeed <= canAttack)
                     {
                         // Call the TakeDamage method on the PlayerMovement script
-                        playerMovement.TakeDamage(attackDamage);
+                        
                         canAttack = 0f;
                     }
                     else

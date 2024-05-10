@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,8 +20,10 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource dashSound; // Reference to the dash sound
     private RespawnManager respawnManager;
     public float attackAnimationDuration = 0.5f;
+    public AudioSource Walk;
+
+
     private Animator attack;
-    public PlayerHealth playerHealth; // Reference to the PlayerHealth component
 
     void Start()
     {
@@ -35,13 +38,16 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
         if (Input.GetButtonDown("Jump") && !isDashing)
         {
             dashSound.Play(); // Play the dash sound
             StartCoroutine(Dash());
         }
+
         FlipSprite();
         OnMove();
+
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
@@ -64,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isFacingRight = true;
         }
+
         transform.localScale = new Vector3(isFacingRight ? 1 : -1, 1, 1);
     }
 
@@ -75,11 +82,13 @@ public class PlayerMovement : MonoBehaviour
         float endTime = startTime + dashDuration;
         float originalMoveSpeed = moveSpeed;
         moveSpeed *= 2;
+
         while (Time.time < endTime)
         {
             rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
             yield return null;
         }
+
         moveSpeed = originalMoveSpeed;
         isDashing = false;
     }
@@ -88,11 +97,13 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
+
         if (moveInput != Vector2.zero)
         {
             animator.SetFloat("xMove", moveInput.x);
             animator.SetFloat("yMove", moveInput.y);
             CreateDust();
+            Walk.Play();
         }
     }
 
@@ -107,9 +118,9 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             attack.SetBool("isAttacking", true);
+            HandlePlayerDeath();
         }
     }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -133,18 +144,10 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("isAttacking", true);
         // Add any additional attack logic here, such as handling cooldowns or applying damage
+
         // Wait for the attack animation to finish
         yield return new WaitForSeconds(attackAnimationDuration);
+
         animator.SetBool("isAttacking", false);
-    }
-
-    public void TakeDamage(float damage)
-    {
-        playerHealth.UpdateHealth(-damage);
-
-        if (playerHealth.health <= 0)
-        {
-            HandlePlayerDeath();
-        }
     }
 }
