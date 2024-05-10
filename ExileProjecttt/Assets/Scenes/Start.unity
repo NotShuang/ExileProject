@@ -981,8 +981,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3302195965933634594, guid: fea21a6e2e48d264cbad457c07bb331b,
         type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302195965933634594, guid: fea21a6e2e48d264cbad457c07bb331b,
+        type: 3}
       propertyPath: EnemyHealth
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302195965933634594, guid: fea21a6e2e48d264cbad457c07bb331b,
+        type: 3}
+      propertyPath: attackDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7403041194093605140, guid: fea21a6e2e48d264cbad457c07bb331b,
         type: 3}
@@ -39536,6 +39546,11 @@ PrefabInstance:
       propertyPath: dashSound
       value: 
       objectReference: {fileID: 1411363620}
+    - target: {fileID: 7413754832042302096, guid: 3d911f3f25613374a9e8a5095e102032,
+        type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7413754832042302096, guid: 3d911f3f25613374a9e8a5095e102032,
         type: 3}
       propertyPath: healthSlider

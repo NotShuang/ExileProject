@@ -221,8 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  attackDamage: 10
-  attackSpeed: 1
+  attackDamage: 5
   EnemyHealth: 500
 --- !u!82 &5353252072315757870
 AudioSource:
