@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScretRoom.unity
     guid: 367ca5d8e7a3e664fa6bd2db118ffbe9
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 097d685596b0dca4ba0a6c201e7f0035
   m_configObjects: {}
