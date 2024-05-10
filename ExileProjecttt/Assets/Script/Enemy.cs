@@ -5,8 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 3f;
-    [SerializeField] private float attackDamage = 10f;
-    [SerializeField] private float attackSpeed = 1f;
+    public float attackDamage = 10f;
     private float canAttack;
     private Transform target;
     private PlayerHealth playerHealth; // Reference to the PlayerHealth component
@@ -33,34 +32,19 @@ public class Enemy : MonoBehaviour
         {
             // Get a reference to the PlayerMovement component
             PlayerMovement playerMovement = other.gameObject.GetComponent<PlayerMovement>();
-
             if (playerMovement != null)
             {
-                // Get a reference to the PlayerHealth component
-                if (playerHealth == null)
+                // Check if the player is attacking
+                if (playerMovement.attack.GetBool("isAttacking"))
                 {
-                    playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-                }
+                    // Reduce the enemy's health
+                    EnemyHealth -= playerMovement.attackDamage;
 
-                // Check if the player's health is not already 0
-                if (playerHealth.health > 0)
-                {
-                    if (attackSpeed <= canAttack)
+                    // Check if the enemy's health is zero or less
+                    if (EnemyHealth <= 0)
                     {
-                        // Call the TakeDamage method on the PlayerMovement script
-                        
-                        canAttack = 0f;
+                        HandleEnemyDeath();
                     }
-                    else
-                    {
-                        canAttack += Time.deltaTime;
-                    }
-                }
-
-                // Handle enemy health
-                if (other.gameObject.tag == "Player" && EnemyHealth > 0)
-                {
-                    EnemyHealth -= 10f;
                 }
             }
         }
@@ -86,5 +70,10 @@ public class Enemy : MonoBehaviour
         {
             target = null;
         }
+    }
+
+    public float GetAttackDamage()
+    {
+        return attackDamage;
     }
 }

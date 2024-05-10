@@ -22,8 +22,11 @@ public class PlayerMovement : MonoBehaviour
     public float attackAnimationDuration = 0.5f;
     public AudioSource Walk;
 
+    public Animator attack;
 
-    private Animator attack;
+    private float lastAttackTime = 0f;
+    public float attackCooldown = 1f; // Adjust this value to change the cooldown duration
+    public float attackDamage = 10f; // Player's attack damage
 
     void Start()
     {
@@ -118,9 +121,31 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             attack.SetBool("isAttacking", true);
-            HandlePlayerDeath();
+
+            // Get a reference to the Enemy script
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // Get the enemy's attack damage
+                float enemyAttackDamage = enemy.GetAttackDamage();
+
+                // Get a reference to the PlayerHealth script
+                PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+                if (playerHealth != null)
+                {
+                    // Reduce the player's health
+                    playerHealth.UpdateHealth(-enemyAttackDamage);
+
+                    // Check if the player's health is zero or less
+                    if (playerHealth.health <= 0)
+                    {
+                        HandlePlayerDeath();
+                    }
+                }
+            }
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -137,7 +162,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Attack()
     {
-        StartCoroutine(AttackAnimation());
+        if (Time.time - lastAttackTime >= attackCooldown)
+        {
+            lastAttackTime = Time.time;
+            StartCoroutine(AttackAnimation());
+        }
     }
 
     IEnumerator AttackAnimation()
