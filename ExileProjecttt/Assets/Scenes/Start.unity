@@ -6653,6 +6653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3d08e908d49ce45a5e4eab3775a4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1411363619 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6242447938427969625, guid: 3d911f3f25613374a9e8a5095e102032,
+    type: 3}
+  m_PrefabInstance: {fileID: 2445311448540864739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1417203754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39161,6 +39167,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Eshkar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341129605713078342, guid: 3d911f3f25613374a9e8a5095e102032,
+        type: 3}
+      propertyPath: dashSound
+      value: 
+      objectReference: {fileID: 1411363619}
+    - target: {fileID: 3341129605713078342, guid: 3d911f3f25613374a9e8a5095e102032,
+        type: 3}
+      propertyPath: interactDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341129605713078342, guid: 3d911f3f25613374a9e8a5095e102032,
+        type: 3}
+      propertyPath: attackAnimationDuration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7413754832042302096, guid: 3d911f3f25613374a9e8a5095e102032,
         type: 3}
