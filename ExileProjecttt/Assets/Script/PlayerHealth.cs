@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Player Respawn");
             RespawnPlayer();
         }
+
         healthSlider.value = health;
     }
 
